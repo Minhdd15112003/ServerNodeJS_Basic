@@ -1,0 +1,13 @@
+- mkdir + tenthumuc
+- npm init //khai báo
+
+- npm install express 
+json-server -w db.json -H 26.92.0.60
+
+Install Nodemon & inspector
+- có công dụng lắng nghe sự thay đổi trong (Update) trong server
+- npm install --save-dev nodemon //cài thư viện
+cài thêm "start": "nodemon --inspect index.js", ở scripts 
+để có thể chạy lệnh npm start và Debug 
+
+
