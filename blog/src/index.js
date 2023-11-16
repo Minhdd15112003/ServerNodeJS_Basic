@@ -3,8 +3,11 @@ const morgan = require("morgan");
 const exphbs = require("express-handlebars"); // Thay handlebars bằng express-handlebars
 const path = require("path");
 const { log } = require("console");
+const { publicDecrypt } = require("crypto");
 const app = express();
 const port = 3000;
+
+app.use(express.static(path.join(__dirname, "public")));
 
 app.use(morgan("combined"));
 
@@ -12,9 +15,9 @@ app.use(morgan("combined"));
 app.engine("handlebars", exphbs.create({ extname: ".hbs" }).engine);
 app.set("view engine", "handlebars");
 app.set("views", path.join(__dirname, "resources/views"));
-console.log("====================================");
-console.log("PATH: ", path.join(__dirname, "resources/views"));
-console.log("====================================");
+// console.log("====================================");
+// console.log("PATH: ", path.join(__dirname, "resources/views"));
+// console.log("====================================");
 app.get("/", (req, res) => {
   res.render("home");
 });
@@ -24,5 +27,5 @@ app.get("/news", (req, res) => {
 });
 
 app.listen(port, () => {
-  console.log(`Example app listening on port ${port}`);
+  console.log(`Đã gọi cổng ${port} thành công `);
 });
