@@ -3,3 +3,9 @@
   h1 {  
     color:$red-color;
 }
+
+footer {
+  position: fixed; /* Đặt vị trí cố định */
+  bottom: 0; /* Đặt bottom về 0 để nằm ở phía dưới */
+  width: 100%; /* Chiều rộng 100% của màn hình */
+}

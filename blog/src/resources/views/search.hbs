@@ -1,0 +1,50 @@
+<div class="mt-4">
+  <form method="POST" action="">
+
+    {{!method là submit với phương thức nào action là submit ở đâu
+    nghĩa là nếu ta để action="/news" và điền z vào input thì Query parameters (?name=z&age=z&dress=z)
+    cua url(http://localhost:3000/SEARCH?name=z&age=z&dress=z) trong search 
+    sẽ được mang vào url của news(http://localhost:3000/NEWS?name=z&age=z&dress=z) }}
+    <div class="mb-3">
+      <label for="search-input" class="form-label">từ khóa</label>
+      <input
+        type="text"
+        class="form-control"
+        id="search-input"
+        placeholder="nhập từ khóa"
+        name="name"
+        {{! với method="GET" name sẽ lấy valvue của name để truyền vào Query parameters trên
+         url(http://localhost:3000/search?name=z&age=z&dress=z)
+        tôi vừa nhập ba chữ z vào  3 input và đc chả về url  Query parameters}}
+        {{! với method="POST" name sẽ lấy valvue của name để truyền vào Form Data trên
+        payload của Network
+        tôi vừa nhập ba chữ z vào  3 input và đc chả về Form Data }}
+      />
+      <input
+        type="text"
+        class="form-control"
+        id="search-input"
+        placeholder="nhập từ khóa"
+        name="age"
+      />
+      <input
+        type="text"
+        class="form-control"
+        id="search-input"
+        placeholder="nhập từ khóa"
+        name="dress"
+      />
+    </div>
+
+    <div class="mb-3">
+      <label for="gender-input" class="form-label">từ khóa</label>
+      <select class="form-control" id="gender-input" name="gender">
+        <option value="">chon giới tính</option>
+        <option value="male">nam </option>
+        <option value="female">nữ</option>
+      </select>
+
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
